@@ -1,0 +1,36 @@
+import matplotlib.pyplot as plt
+from matplotlib.animation import FuncAnimation
+import random
+
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 4))
+
+# --- Line Plot Data ---
+x_data = []
+y_data = []
+line, = ax1.plot([], [], color='blue')
+ax1.set_xlim(0, 10)
+ax1.set_ylim(0, 100)
+ax1.set_title("Dynamic Line")
+
+# --- Bar Plot Data ---
+categories = ["A", "B", "C"]
+bars = ax2.bar(categories, [0, 0, 0], color='green')
+ax2.set_ylim(0, 100)
+ax2.set_title("Dynamic Bar")
+
+def update(frame):
+    # Update line plot
+    x_data.append(frame)
+    y_data.append(random.randint(10, 100))
+    line.set_data(x_data, y_data)
+
+    # Update bar chart
+    for bar in bars:
+        bar.set_height(random.randint(10, 100))
+
+    return line, *bars
+
+ani = FuncAnimation(fig, update, frames=10, interval=1000)
+
+plt.tight_layout()
+plt.show()

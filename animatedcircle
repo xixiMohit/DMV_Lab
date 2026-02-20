@@ -1,0 +1,19 @@
+import matplotlib.pyplot as plt
+from matplotlib.animation import FuncAnimation
+
+fig, ax = plt.subplots()
+
+# Create a circle
+circle = plt.Circle((0, 0), 0.5, color='blue')
+ax.add_patch(circle)
+
+ax.set_xlim(0, 10)
+ax.set_ylim(0, 5)
+
+def update(frame):
+    circle.center = (frame, 2.5)  # Move circle horizontally
+
+ani = FuncAnimation(fig, update, frames=10, interval=500)
+
+plt.gca().set_aspect('equal')
+plt.show()

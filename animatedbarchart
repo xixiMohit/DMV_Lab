@@ -1,0 +1,27 @@
+import matplotlib.pyplot as plt
+from matplotlib.animation import FuncAnimation
+
+# Topics
+topics = ["Data Cleaning", "Big Data", "Data Visualisation"]
+
+# Data over time
+data = [
+    [10, 20, 15],
+    [15, 25, 20],
+    [20, 30, 28],
+    [25, 35, 35]
+]
+
+fig, ax = plt.subplots()
+
+bars = ax.bar(topics, data[0])
+ax.set_ylim(0, 40)
+ax.set_title("Data Management & Visualisation Trends")
+
+def update(frame):
+    for bar, height in zip(bars, data[frame]):
+        bar.set_height(height)
+
+ani = FuncAnimation(fig, update, frames=len(data), interval=1000)
+
+plt.show()

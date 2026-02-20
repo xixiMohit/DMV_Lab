@@ -1,0 +1,15 @@
+import matplotlib.pyplot as plt
+
+fig, ax = plt.subplots()
+
+# Draw a circle at (5,5) with radius 2
+circle = plt.Circle((5, 5), 2, color='blue', fill=True)
+ax.add_patch(circle)
+
+# Set limits and aspect ratio
+ax.set_xlim(0, 10)
+ax.set_ylim(0, 10)
+ax.set_aspect('equal')
+ax.set_title("Static Circle")
+
+plt.show()

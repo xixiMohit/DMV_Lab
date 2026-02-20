@@ -1,0 +1,24 @@
+import matplotlib.pyplot as plt
+from matplotlib.animation import FuncAnimation
+
+# Categories (Data Management topics)
+labels = ["Data Cleaning", "Big Data", "Data Visualisation"]
+
+# Data changing over time
+data = [
+    [30, 40, 30],
+    [25, 45, 30],
+    [20, 50, 30],
+    [15, 55, 30]
+]
+
+fig, ax = plt.subplots()
+
+def update(frame):
+    ax.clear()
+    ax.pie(data[frame], labels=labels, autopct='%1.0f%%')
+    ax.set_title("Animated Pie Chart - Topic Distribution")
+
+ani = FuncAnimation(fig, update, frames=len(data), interval=1000)
+
+plt.show()

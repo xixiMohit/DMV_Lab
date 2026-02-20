@@ -1,0 +1,15 @@
+import matplotlib.pyplot as plt
+
+# Sample data
+x = [1, 2, 3, 4, 5]
+y = [10, 20, 15, 25, 30]
+
+# Create line chart
+plt.plot(x, y, color='blue', marker='o', linestyle='-', linewidth=2)
+
+plt.title("Static Line Chart")
+plt.xlabel("X-axis")
+plt.ylabel("Y-axis")
+plt.grid(True)
+
+plt.show()

@@ -1,0 +1,20 @@
+import matplotlib.pyplot as plt
+from matplotlib.animation import FuncAnimation
+import random
+
+# Categories
+categories = ["Data Cleaning", "Big Data", "Data Visualisation"]
+
+fig, ax = plt.subplots()
+bars = ax.bar(categories, [0, 0, 0], color='skyblue')
+
+ax.set_ylim(0, 100)
+ax.set_title("Dynamic Bar Chart - Live Data Simulation")
+
+def update(frame):
+    for bar in bars:
+        bar.set_height(random.randint(10, 100))  # Random new value
+
+ani = FuncAnimation(fig, update, interval=1000)
+
+plt.show()

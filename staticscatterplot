@@ -1,0 +1,15 @@
+import matplotlib.pyplot as plt
+
+# Sample data
+x = [1, 2, 3, 4, 5, 6]
+y = [10, 25, 15, 30, 20, 35]
+
+# Create scatter plot
+plt.scatter(x, y, color='blue', s=100)  # s=100 sets marker size
+
+plt.title("Static Scatter Plot")
+plt.xlabel("X-axis")
+plt.ylabel("Y-axis")
+plt.grid(True)
+
+plt.show()

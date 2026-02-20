@@ -1,0 +1,16 @@
+import matplotlib.pyplot as plt
+
+# Categories (Data Management topics)
+categories = ["Data Cleaning", "Big Data", "Data Visualisation"]
+
+# Values
+values = [40, 70, 55]
+
+# Create bar chart
+plt.bar(categories, values, color='skyblue')
+
+plt.title("Static Bar Chart - Topic Popularity")
+plt.ylabel("Popularity Index")
+plt.ylim(0, 100)
+
+plt.show()
